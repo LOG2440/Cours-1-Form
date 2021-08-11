@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Formulaire HTML5</title>
+    <link href="form.css" rel="stylesheet" />
+    <style>
+      textarea:required:invalid,
+      input:required:invalid {
+        background-color: lightyellow;
+      }
+    </style>
+    <script>
+      function validateComments(input) {
+        if (input.value.length < 20) {
+          input.setCustomValidity("Plus de détails svp.");
+        } else {
+          input.setCustomValidity("");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Animalerie Miaou</h1>
+    <form action="#">
+      <p><i>Complétez le formulaire</i></p>
+      <fieldset>
+        <legend>Contact</legend>
+        <label for="nom">Nom</label><input id="nom" placeholder="Jean Tremblay" autofocus required /><br />
+        <label for="tel">Téléphone</label
+        ><input id="tel" type="tel" placeholder="(xxx)xxx-xxxx" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" /><br />
+        <label for="email"> Courriel</label><input id="email" type="email" required /><br />
+      </fieldset>
+      <fieldset>
+        <legend>Informations personnelles</legend>
+        <label for="dateNaissance">Date de naissance</label><input id="dateNaissance" type="date" required /><br />
+        <label for="age">Age</label><input id="age" type="number" min="0" max="120" step="0.5" required /><br />
+        <label for="proprietaire">Propriétaire</label>
+        <select id="proprietaire">
+          <option value="V">Oui</option>
+          <option value="F">Non</option></select
+        ><br />
+        <label for="comments">Commentaires</label>
+        <textarea id="comments" oninput="validateComments(this)" required></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Quel animal vous intéresse?</legend>
+        <label for="cochon"><input id="cochon" type="checkbox" /> Cochon</label>
+        <label for="chat"><input id="chat" type="checkbox" /> Chat</label>
+        <label for="souris"><input id="souris" type="checkbox" /> Souris</label>
+        <label for="piranha"><input id="piranha" type="checkbox" /> Piranha</label>
+        <label for="lapin"><input id="lapin" type="checkbox" /> Lapin</label>
+        <label for="araignee"><input id="araignee" type="checkbox" /> Araignée</label>
+        <label for="licorne"><input id="licorne" type="checkbox" /> Licorne</label>
+        <label for="loup"> <input id="loup" type="checkbox" /> Loup</label>
+      </fieldset>
+      <p><input type="submit" value="Soumettre" /></p>
+    </form>
+  </body>
+</html>
