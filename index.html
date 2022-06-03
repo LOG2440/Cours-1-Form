@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <title>Formulaire HTML5</title>
+    <title>Animalerie Miaou</title>
     <link href="form.css" rel="stylesheet" />
     <style>
       textarea:required:invalid,
@@ -23,12 +23,13 @@
   <body>
     <h1>Animalerie Miaou</h1>
     <form action="#">
-      <p><i>Complétez le formulaire</i></p>
+      <i>Complétez le formulaire</i>
       <fieldset>
         <legend>Contact</legend>
-        <label for="nom">Nom</label><input id="nom" placeholder="Jean Tremblay" autofocus required /><br />
-        <label for="tel">Téléphone</label
-        ><input id="tel" type="tel" placeholder="(xxx)xxx-xxxx" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" /><br />
+        <label for="nom">Nom</label>
+        <input id="nom" placeholder="Jean Tremblay" autofocus required /><br />
+        <label for="tel">Téléphone</label>
+        <input id="tel" type="tel" placeholder="(xxx)xxx-xxxx" pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" /><br />
         <label for="email"> Courriel</label><input id="email" type="email" required /><br />
       </fieldset>
       <fieldset>
@@ -38,8 +39,8 @@
         <label for="proprietaire">Propriétaire</label>
         <select id="proprietaire">
           <option value="V">Oui</option>
-          <option value="F">Non</option></select
-        ><br />
+          <option value="F" selected>Non</option>
+        </select><br />
         <label for="comments">Commentaires</label>
         <textarea id="comments" oninput="validateComments(this)" required></textarea>
       </fieldset>
@@ -54,7 +55,7 @@
         <label for="licorne"><input id="licorne" type="checkbox" /> Licorne</label>
         <label for="loup"> <input id="loup" type="checkbox" /> Loup</label>
       </fieldset>
-      <p><input type="submit" value="Soumettre" /></p>
+      <input type="submit" value="Soumettre" />
     </form>
   </body>
 </html>
